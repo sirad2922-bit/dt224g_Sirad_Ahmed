@@ -6,7 +6,7 @@
 /* Body Styles */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4
+  background-color: #ffffff;
   color: #222;
   line-height: 1.6;
 }
@@ -23,23 +23,51 @@ body {
   text-decoration: none;
 }
 /* innehåll */
-.container {
- max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+.aktivitet-container {
+ display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;}
+  .aktivitet {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    overflow: hidden;
 }
+.aktivitet img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .aktivitet h3 {
+    margin-top: 10px;
+    color: #677a71;
+    padding: 0 16px;
+  }
+.aktivitet p {
+    margin-top: 10px;
+    color: #555;
+    padding: 0 16px;
+  }
+
  nav {
   background-color: #333;
+  flex-direction: row;
   color: #fff;
+  align-items: center;
   padding: 10px;
 }
  nav ul {
   list-style: none;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
-}
- nav ul li {
-  margin: 0 10px;
+  gap: 10px;
 }
  nav ul li a {
   color: #fff;
@@ -66,6 +94,7 @@ background-image: url('../images/hero.jpg');
   background-size: cover;
   background-position: center;
   height: 200px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,10 +105,84 @@ background-image: url('../images/hero.jpg');
 .hero p {
   color: #fff;
 text-shadow: 1px 1px 4px rgb(0, 0,0,0.7);
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
 }
 .logo {
   max-width: 100px;
   height: auto;
   margin: 0 auto;}
+  
+.introduktion,
+.aktiviteter,
+.avslutning {
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+}
+section h2 {
+  color: #677a71;
+  margin-bottom: 16px;
+}
+
+.avslutning p {
+  text-align: left;
+  font-size: 18px;
+  background-color: #eaeaea;
+  border-radius: 6px;
+  padding: 20px;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.footer p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+.footer .kontakt-info {
+  list-style: none;
+  padding: 0;
+}
+footer .kontakt-info li {
+  margin-bottom: 5px;
+}
+footer ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+.citat
+  {
+    font-style: italic;
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    
+    .aktivitet-container {
+      flex-direction: row;
+    }
+    nav ul {
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .aktivitet-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      flex: 1 1 100%;
+    }
+  .hero {
+    min-height: 400px;
+  }
+}
