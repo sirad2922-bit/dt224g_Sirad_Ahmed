@@ -13,37 +13,45 @@ body {
  h1,h2, h3 {
   color: #677a71;
   line-height: 1.2;
-}
+  margin-bottom: 12px;}
+  p {margin-bottom: 12px;}
+ul {list-style: none;}
  img{
   max-width: 100%;
   display: block;
 }
- a {
+
+a {
   color: #333;
   text-decoration: none;
 }
 /* innehåll */
+.aktiviteter {background-color: #f1efef;
+  padding: 40px 20px;}
 .aktivitet-container {
  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;}
+ flex-direction:column;
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;}
+  
   .aktivitet {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    flex: 1 1 calc(33.333% - 20px);
-    overflow: hidden;
-}
+    background-color: #ffffff;
+  }
+  
+  .aktivitetstext {padding: 16px;}
+
 .aktivitet img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    object-fit: cover;
   }
 
-  .aktivitet h3 {
+  .aktiviteter h2 { 
+    text-align: center;
+  }
+
+  .aktiviteter h3 {
     margin-top: 10px;
     color: #677a71;
     padding: 0 16px;
@@ -55,9 +63,7 @@ body {
   }
 
  nav {
-  background-color: #333;
   flex-direction: row;
-  color: #fff;
   align-items: center;
   padding: 10px;
 }
@@ -65,12 +71,12 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   gap: 10px;
 }
  nav ul li a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
 }
 .knapp {
@@ -82,43 +88,54 @@ body {
   border-radius: 5px;
   font-size: 16px;
   margin-top: 10px;
-}/*header Styles */
+  width: 180px;
+  text-align: center;
+}
+/*header Styles */
 header {
   background-color: #f1efef;
   color: #333;
-  padding: 20px 0;
-  text-align: center;
+  padding: 20px;
 }
+.brand { 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-name {
+  font-weight: bold;
+}
+
 .hero {
 background-image: url('../images/hero.jpg');
   background-size: cover;
   background-position: center;
-  height: 200px;
   min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 40px 20px;
 }
 .hero h1,
 .hero p {
   color: #fff;
-text-shadow: 1px 1px 4px rgb(0, 0,0,0.7);
   text-align: left;
   margin-bottom: 10px;
 }
 .logo {
   max-width: 100px;
   height: auto;
-  margin: 0 auto;}
-  
+}
+
 .introduktion,
-.aktiviteter,
 .avslutning {
-  max-width: 800px;
-  padding: 20px;
+  max-width: 1100px;
+  padding: 40px 20px;
   margin: 0 auto;
+}
+.introduktion {
+  text-align: center;
 }
 section h2 {
   color: #677a71;
@@ -128,22 +145,28 @@ section h2 {
 .avslutning p {
   text-align: left;
   font-size: 18px;
-  background-color: #eaeaea;
-  border-radius: 6px;
-  padding: 20px;
 }
 .footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
+  background-color: #d9d9d9;
+  color:#222;
+  padding: 20px;
   text-align: center;
 }
+
+.copyright {
+width: 100%;
+text-align: center;
+}
+.footer .logo {
+  margin: auto;
+}
+
 .footer h2 {
-  color: #fff;
+  color: #222;
   margin-bottom: 10px;
 }
 .footer p {
-  color: #ccc;
+  color: #222;
   margin-bottom: 10px;
 }
 .footer .kontakt-info {
@@ -154,7 +177,7 @@ footer .kontakt-info li {
   margin-bottom: 5px;
 }
 footer ul li a {
-  color: #ccc;
+color: #222;
   text-decoration: none;
 }
 .footer ul li a:hover {
@@ -168,6 +191,12 @@ footer ul li a {
     text-align: center;
   }
   @media (min-width: 768px) {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap:20px;
+    }
     
     .aktivitet-container {
       flex-direction: row;
@@ -177,12 +206,36 @@ footer ul li a {
       flex-direction: row;
       gap: 20px;
     }
-    .aktivitet-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      flex: 1 1 100%;
+      .footer-links{
+        flex-direction: column;
+        gap: 5px;
+      }
+    .aktivitet {
+      flex: 1;
     }
   .hero {
     min-height: 400px;
   }
+  .avslutning {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+text-align: left;
+  }
+
+  .footer .logo {
+    margin: 0;
+    width: 80px;
 }
+.footer-brand{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+  }
